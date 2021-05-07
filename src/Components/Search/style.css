@@ -1,0 +1,120 @@
+.search-wrapper {
+  position: absolute;
+  top: 75px;
+  right: auto;
+  left: auto;
+  width: 400px;
+  margin-top: 15px;
+  margin-right: 5vw;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px -12px rgb(0 0 0 / 42%), 0 3px 20px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+}
+
+.search-wrapper .btn {
+  margin-top: 40px;
+  text-align: left;
+}
+
+.search-wrapper .btn button {
+  width: 120px;
+  color: #fff;
+  background-color: #1b9975;
+}
+
+.search-wrapper .back-btn {
+  margin-bottom: 8px;
+  padding: 0;
+  border: 0;
+}
+
+.search-wrapper .back-btn:hover {
+  color: #1b9975;
+}
+
+.search-wrapper .back-btn .anticon {
+  margin-left: 5px;
+}
+
+.search-wrapper .back-btn .anticon + span {
+  color: #1b9975;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.search-wrapper h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-wrapper .result-btn-wrapper {
+  text-align: left;
+}
+
+.search-wrapper .result-btn-wrapper .result-btn {
+  width: 120px;
+  color: #fff;
+}
+
+.search-wrapper .ant-radio-group {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-wrapper h4 {
+  margin-bottom: 20px;
+}
+
+.search-wrapper .form-item-horizontal-wrapper {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.search-wrapper .ant-form-item.form-item-horizontal {
+  width: 75%;
+  margin: 0;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search-wrapper .form-item-horizontal .ant-form-item-label {
+  width: 18%;
+  padding: 0;
+}
+
+.search-wrapper .form-item-horizontal label {
+  font-size: 12px;
+}
+
+.search-wrapper .form-item-horizontal-btn {
+  width: 25%;
+  background-color: transparent;
+  color: #1b9975;
+  font-size: 12px;
+  border: 0;
+  text-decoration: underline;
+  text-align: left;
+}
+
+.search-wrapper .advanced-search .ant-table-wrapper {
+  margin-top: 30px;
+}
+
+.search-wrapper .advanced-search .anticon-delete{
+  font-size: 15px;
+}
+
+.search-wrapper .search-continue .ant-btn:focus {
+  color: #fff;
+}
+
+.search-wrapper .specific-color {
+  width: 50px;
+  height: 35px;
+  display: flex;
+}

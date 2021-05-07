@@ -1,0 +1,74 @@
+header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 70px;
+  padding: 0 5vw;
+  background-color: #1b9975;
+  color: #fff;
+  box-shadow: 0 10px 20px -12px rgb(0 0 0 / 42%), 0 3px 20px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+  display: flex;
+  justify-content: space-between;
+}
+
+header .nav-section-right {
+  display: flex;
+}
+
+header .main-logo {
+  width: 154px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 0 0 15px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .main-logo img {
+  width: 128px;
+  height: 48px;
+}
+
+header .navbar-search-btn {
+  height: 100%;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header .nav-bar-btn {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+header .nav-bar-btn span {
+  color: #fff;
+  font-family: 'DroidArabicKufiRegular';
+  font-size: 12px;
+}
+
+header .navbar-search-btn img {
+  margin-left: 8px;
+  width: 18px;
+}
+
+header .secondary-logo {
+  width: 122px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 0 0 15px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .secondary-logo img {
+  width: 96px;
+  height: 48px;
+}
