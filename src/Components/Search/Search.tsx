@@ -12,9 +12,9 @@ import "./style.css";
 const { TabPane } = Tabs;
 
 function Search() {
-  const [displaySection, setDisplaySection] = useState<boolean>(false);
+  const [displaySection, setDisplaySection] = useState<boolean>(true);
   const [displaySearchContinue, setDisplaySearchContinue] = useState<boolean>(true);
-  const [displaySearchResults, setDisplaySearchResults] = useState<boolean>(false);
+  const [displaySearchResults, setDisplaySearchResults] = useState<boolean>(true);
   const [displayAdvancedSearchContinue, setDisplayAdvancedSearchContinue] = useState<boolean>(true);
   const [form] = Form.useForm();
 

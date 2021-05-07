@@ -19,7 +19,7 @@ function App() {
           style={{ width: "100%", height: "1000px" }}
         ></iframe>
       </div>
-      {!displaySearch && <Search />}
+      {displaySearch && <Search />}
     </div>
   );
 }
