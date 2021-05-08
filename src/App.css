@@ -144,6 +144,61 @@
   background-color: #d1f4d1;
 }
 
-.ant-table-thead > tr > th, .ant-table-tbody > tr > td, .ant-table tfoot > tr > th, .ant-table tfoot > tr > td {
+.ant-table-thead > tr > th,
+.ant-table-tbody > tr > td,
+.ant-table tfoot > tr > th,
+.ant-table tfoot > tr > td {
   padding: 12px;
 }
+
+.image-vision-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-vision-wrapper .image-vision {
+  overflow: hidden;
+  position: relative;
+  width: 280px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: imageVision 4s;
+}
+
+.image-vision-wrapper .image-vision img {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  animation: animateImage 2s;
+}
+
+@keyframes animateImage {
+  0% {
+    bottom: -400px;
+  }  
+
+  100% {
+    bottom: 5px;
+  }  
+}
+
+@keyframes imageVision {
+  0% {
+    width: 93px;
+  }
+
+  50% {
+    width: 93px;
+  }  
+
+  100% {
+    width: 280px;
+  }
+}
+
+
