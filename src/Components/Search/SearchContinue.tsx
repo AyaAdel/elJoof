@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ColumnsType } from "antd/es/table";
 import { Form, Button, Input, Table } from "antd";
 import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
@@ -63,9 +63,12 @@ const dataSource = [
 type Iprops = {
   handleSearchTab: Function;
   sendSearchContinue: boolean;
+  resetField: boolean;
 };
 
-function SearchContinue({ handleSearchTab, sendSearchContinue }: Iprops) {
+
+
+function SearchContinue({ handleSearchTab, sendSearchContinue, resetField }: Iprops) {
   const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
 
   const onSelectChange = (selectedRowKeys: any) => setSelectedRowKeys(selectedRowKeys);
@@ -79,6 +82,10 @@ function SearchContinue({ handleSearchTab, sendSearchContinue }: Iprops) {
 
   const hasSelected = selectedRowKeys.length > 0;
 
+  useEffect(() => {
+    setSelectedRowKeys([]);
+  }, [resetField])
+
   return (
     <div className="search-continue" style={{ display: `${sendSearchContinue ? "none" : "block"}` }}>
       <Button className="back-btn" onClick={() => handleSearchTab(true)}>
@@ -86,10 +93,10 @@ function SearchContinue({ handleSearchTab, sendSearchContinue }: Iprops) {
         العودة
       </Button>
       <h3>قائمة المؤشرات</h3>
-      <Form.Item>
-        <Search allowClear onSearch={onSearch} enterButton={<ArrowLeftOutlined />} />
+      <Form.Item name="searchContinueSearch">
+        <Search allowClear autoComplete="off" onSearch={onSearch} enterButton={<ArrowLeftOutlined />} />
       </Form.Item>
-      <Form.Item>
+      <Form.Item name="searchContinueSelect">
         <Table<Item>
           rowSelection={{
             type: "radio",

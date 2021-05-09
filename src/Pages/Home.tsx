@@ -26,18 +26,20 @@ function Home() {
     <div>
       {displaySplash && (
         <div className="image-vision-wrapper">
-          <div className="image-vision">
-            <img src="images/logo.png" alt="Logo" />
+          <div className="entrance-background">
+            <div className="image-vision">
+              <img src="images/logo.png" alt="Logo" />
+            </div>
           </div>
         </div>
       )}
       {displayContent && (
         <>
           <Header handleSearch={callbaskSearch} />
-          <div>
+          <div className="map-wrapper">
             <iframe
               src="https://www.google.com/maps/d/embed?mid=17y--WIYiSD0jE3-HTtI8jQNtDz4&hl=en"
-              style={{ width: "100%", height: "1000px" }}
+              style={{ width: "100%", height: "100%" }}
             ></iframe>
           </div>
           {displaySearch && <Search />}

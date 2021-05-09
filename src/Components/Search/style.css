@@ -4,11 +4,9 @@
   right: auto;
   left: auto;
   width: 400px;
-  margin-top: 15px;
-  margin-right: 5vw;
-  padding: 20px;
+  margin-right: 2px;
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: 2px;
   box-shadow: 0 10px 20px -12px rgb(0 0 0 / 42%), 0 3px 20px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
 }
 
@@ -105,7 +103,7 @@
   margin-top: 30px;
 }
 
-.search-wrapper .advanced-search .anticon-delete{
+.search-wrapper .advanced-search .anticon-delete {
   font-size: 15px;
 }
 
@@ -117,4 +115,60 @@
   width: 50px;
   height: 35px;
   display: flex;
+}
+
+.specification-wrapper .specification-section {
+  position: absolute;
+  top: 49%;
+  left: -350px;
+  overflow-y: auto;
+  width: 350px;
+  height: 50vh;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 10px 20px -12px rgb(0 0 0 / 42%), 0 3px 20px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+  transition: all 0.3s linear;
+}
+
+.specification-wrapper .specification-btn {
+  position: absolute;
+  top: 50%;
+  left: -42px;
+  width: 120px;
+  background-color: #1b9975;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-90deg);
+  transition: all 0.3s linear;
+}
+
+.specification-wrapper .specification-btn:hover,
+.specification-wrapper .specification-btn:focus {
+  background-color: #1b9975;
+  color: #fff;
+}
+
+.specification-wrapper .specification-btn .anticon {
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+.specification-wrapper h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.specification-wrapper .specification-btn-left {
+  left: 335px;
+}
+
+.specification-wrapper .specification-section-left {
+  left: 2px;
+}
+
+.search-wrapper .result-btn-wrapper .ant-btn[disabled] {
+  color: rgba(0, 0, 0, 0.25)
 }

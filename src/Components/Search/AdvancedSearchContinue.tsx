@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ColumnsType } from "antd/es/table";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { Form, Button, Input, Table, Select, Radio } from "antd";
@@ -39,9 +39,10 @@ const dataSource = [
 type Iprops = {
   sendAdvancedSearchContinue: boolean;
   handlecallbackAdvancedSearchContiue: Function;
+  resetField: boolean;
 };
 
-function AdvancedSearchContinue({ sendAdvancedSearchContinue, handlecallbackAdvancedSearchContiue }: Iprops) {
+function AdvancedSearchContinue({ sendAdvancedSearchContinue, handlecallbackAdvancedSearchContiue, resetField }: Iprops) {
   const [value, setValue] = useState<number>(1);
   const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
   const [displaySelectResult, setDisplaySelectResult] = useState<boolean>(false);
@@ -55,6 +56,12 @@ function AdvancedSearchContinue({ sendAdvancedSearchContinue, handlecallbackAdva
 
   const hasSelected = selectedRowKeys.length > 0;
 
+  useEffect(() => {
+    setValue(1);
+    setSelectedRowKeys([]);
+    setDisplaySelectResult(false);
+  }, [resetField])
+
   return (
     <div style={{ display: `${sendAdvancedSearchContinue ? "none" : "block"}` }}>
       <Button className="back-btn" onClick={() => handlecallbackAdvancedSearchContiue(true)}>
@@ -63,7 +70,7 @@ function AdvancedSearchContinue({ sendAdvancedSearchContinue, handlecallbackAdva
       </Button>
       <h3>أختر المؤشر</h3>
       <Form.Item label="البحث بأسم المرشر" name="indicatorSearch">
-        <Input />
+        <Input autoComplete="off" />
       </Form.Item>
       <Form.Item name="indicatorName" label="أسم المؤشر">
         <Select placeholder="أختر المؤشر" allowClear>
@@ -75,7 +82,7 @@ function AdvancedSearchContinue({ sendAdvancedSearchContinue, handlecallbackAdva
         </Select>
       </Form.Item>
       <Form.Item name="indicatorName2" label="أسم المؤشر">
-        <Select placeholder="أختر المؤشر" onChange={() => setDisplaySelectResult(true)} allowClear>
+        <Select placeholder="أختر المؤشر" onChange={() => setDisplaySelectResult(!displaySelectResult)} allowClear>
           {indicator.map((item: string, i: number) => (
             <Option key={i} value={item}>
               {item}

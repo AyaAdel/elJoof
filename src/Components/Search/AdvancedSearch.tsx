@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ColumnsType } from "antd/es/table";
 import { DeleteOutlined } from "@ant-design/icons";
 import { Form, Select, Button, Divider, Radio, Table } from "antd";
@@ -25,9 +25,10 @@ type Iprops = {
   form: any;
   handleCallbackAdvancedSearch: Function;
   sendAdvancedSearch: boolean;
+  resetField: boolean;
 };
 
-function AdvancedSearch({ form, handleCallbackAdvancedSearch, sendAdvancedSearch }: Iprops) {
+function AdvancedSearch({ form, handleCallbackAdvancedSearch, sendAdvancedSearch, resetField }: Iprops) {
   const [value, setValue] = useState<number>(1);
   const [city, setCity] = useState<boolean>(false);
   const [region, setRegion] = useState<boolean>(false);
@@ -79,18 +80,25 @@ function AdvancedSearch({ form, handleCallbackAdvancedSearch, sendAdvancedSearch
   ];
 
   const addCity = () => {
-    setData([{ ...data[0], city: form.getFieldValue("advancedSelectCity") }]);
+    setData([{ ...data[0], code: 101, city: form.getFieldValue("advancedSelectCity") }]);
     setDisplayTable(true);
     form.resetFields(["advancedSelectCity"]);
     setCity(false);
   };
 
   const addRegion = () => {
-    setData([{ ...data[0], region: form.getFieldValue("advancedSelectRegion") }]);
+    setData([{ ...data[0], code: 101, region: form.getFieldValue("advancedSelectRegion") }]);
     setDisplayTable(true);
     form.resetFields(["advancedSelectRegion"]);
     setRegion(false);
   };
+
+  useEffect(() => {
+    setCity(false);
+    setRegion(false);
+    deleteTable();
+    setValue(1);
+  }, [resetField]);
 
   return (
     <div className="advanced-search" style={{ display: `${sendAdvancedSearch ? "block" : "none"}` }}>

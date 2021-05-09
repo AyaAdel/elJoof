@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Select, Button } from "antd";
 
 const { Option } = Select;
@@ -22,11 +22,17 @@ const cities = [
 type Iprops = {
   handleSearchTab: Function;
   sendDisplaySection: boolean;
+  resetField: boolean;
 };
 
-function SearchTab({ handleSearchTab, sendDisplaySection }: Iprops) {
+function SearchTab({ handleSearchTab, sendDisplaySection, resetField }: Iprops) {
   const [displayCities, setDisplayCities] = useState<boolean>(false);
   const [displaySubmit, setDisplaySubmit] = useState<boolean>(false);
+
+  useEffect(() => {
+    setDisplayCities(false);
+    setDisplaySubmit(false);
+  }, [resetField])
 
   return (
     <div style={{ display: `${sendDisplaySection ? "block" : "none"}` }}>

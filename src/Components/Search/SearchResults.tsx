@@ -46,97 +46,6 @@ const dataSource = [
   },
 ];
 
-type Specific = {
-  key: number;
-  color: string;
-  from: string;
-  to: string;
-};
-
-const spicificColumns: ColumnsType<Specific> = [
-  {
-    title: "",
-    dataIndex: "color",
-    key: "color",
-    align: "right",
-    render:(_, {color}) => <span className="specific-color" style={{backgroundColor: color}}></span>
-  },
-  {
-    title: "من",
-    dataIndex: "from",
-    key: "from",
-    align: "right",
-  },
-  {
-    title: "إلى",
-    dataIndex: "to",
-    key: "to",
-    align: "right",
-  },
-];
-
-const specificDataSource = [
-  {
-    key: 1,
-    color: "#ff9999",
-    from: "من 0.87 %",
-    to: "إلى 19.2 %",
-  },
-  {
-    key: 2,
-    color: "#ff6666",
-    from: "أكبر من 19.2 %",
-    to: "إلى 37.54 %",
-  },
-  {
-    key: 3,
-    color: "#ff3333",
-    from: "أكبر من 37.54 %",
-    to: "إلى 55.87 %",
-  },
-  {
-    key: 4,
-    color: "#b30000",
-    from: "أكبر من 55.87 %",
-    to: "إلى 74.21 %",
-  },
-  {
-    key: 5,
-    color: "#4d0000",
-    from: "أكبر من 74.21 %",
-    to: "إلى 92.54 %",
-  },
-];
-
-type MaxMin = {
-  key: number;
-  max: string;
-  min: string;
-};
-
-const MaxMinColumns: ColumnsType<MaxMin> = [
-  {
-    title: "أكبر قيمة",
-    dataIndex: "max",
-    key: "max",
-    align: "right",
-  },
-  {
-    title: "أقل قيمة",
-    dataIndex: "min",
-    key: "min",
-    align: "right",
-  },
-];
-
-const MaxMinDataSource = [
-  {
-    key: 1,
-    max: "92.54 %",
-    min: "0.87 %",
-  }
-];
-
 type Iprops = {
   sendDisplaySection?: boolean;
   handleSearchResults?: boolean | any;
@@ -182,10 +91,6 @@ function SearchResults({
       )}
       <h3>نتائج البحث</h3>
       <Table<Result> dataSource={dataSource} columns={columns} pagination={false} />
-      <h3 style={{marginTop: '20px'}}>التصنيف</h3>
-       <Table<Specific> dataSource={specificDataSource} columns={spicificColumns} pagination={false} size="small" />
-       <br />
-       <Table<MaxMin> dataSource={MaxMinDataSource} columns={MaxMinColumns} pagination={false} size="small" />
     </div>
   );
 }
